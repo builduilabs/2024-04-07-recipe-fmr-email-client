@@ -37,7 +37,7 @@ export default function EmailClient({
   }
 
   return (
-    <div className="mx-auto flex w-full flex-1 overflow-hidden rounded-lg bg-gray-800 border-t border-gray-700">
+    <div className="flex w-full flex-1">
       <div className="flex w-2/5 flex-col bg-gray-800">
         <div className="shadow-sm shadow-black/50 px-5">
           <div className="flex justify-between py-2 text-right">
