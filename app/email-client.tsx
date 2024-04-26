@@ -37,7 +37,7 @@ export default function EmailClient({
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 overflow-hidden rounded-lg bg-gray-800 shadow-lg border-t border-gray-700 shadow-gray-950">
+    <div className="mx-auto flex w-full flex-1 overflow-hidden rounded-lg bg-gray-800 border-t border-gray-700">
       <div className="flex w-2/5 flex-col bg-gray-800">
         <div className="shadow-sm shadow-black/50 px-5">
           <div className="flex justify-between py-2 text-right">
@@ -73,7 +73,7 @@ export default function EmailClient({
                     className={`${
                       selectedMessageIds.includes(message.id)
                         ? "bg-blue-500"
-                        : "hover:bg-gray-600"
+                        : "hover:bg-gray-700"
                     } block w-full cursor-pointer truncate rounded py-3 px-3 text-left`}
                   >
                     <p
