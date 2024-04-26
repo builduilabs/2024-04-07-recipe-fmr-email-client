@@ -37,19 +37,19 @@ export default function EmailClient({
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 overflow-hidden rounded bg-white">
-      <div className="flex w-2/5 flex-col bg-gray-50">
-        <div className="shadow-sm shadow-gray-300 px-5">
+    <div className="mx-auto flex w-full max-w-3xl flex-1 overflow-hidden rounded bg-gray-600">
+      <div className="flex w-2/5 flex-col bg-gray-700">
+        <div className="shadow-sm shadow-black/50 px-5">
           <div className="flex justify-between py-2 text-right">
             <button
               onClick={addMessage}
-              className="-mx-2 rounded px-2 py-1 text-gray-400 hover:text-gray-500 active:bg-gray-200"
+              className="-mx-2 rounded px-2 py-1 text-gray-400 transition active:bg-gray-600 active:text-gray-300"
             >
               <EnvelopeIcon className="size-5" />
             </button>
             <button
               onClick={archiveMessages}
-              className="-mx-2 rounded px-2 py-1 text-gray-400 hover:text-gray-500 active:bg-gray-200"
+              className="-mx-2 rounded px-2 py-1 text-gray-400 transition active:bg-gray-600 active:text-gray-300"
             >
               <ArchiveBoxIcon className="size-5" />
             </button>
@@ -73,14 +73,14 @@ export default function EmailClient({
                     className={`${
                       selectedMessageIds.includes(message.id)
                         ? "bg-blue-500"
-                        : "hover:bg-gray-200"
+                        : "hover:bg-gray-600"
                     } block w-full cursor-pointer truncate rounded py-3 px-3 text-left`}
                   >
                     <p
                       className={`${
                         selectedMessageIds.includes(message.id)
                           ? "text-white"
-                          : "text-gray-500"
+                          : "text-gray-200"
                       } truncate text-sm font-semibold`}
                     >
                       {message.subject}
@@ -90,7 +90,7 @@ export default function EmailClient({
                         selectedMessageIds.includes(message.id)
                           ? "text-blue-200"
                           : "text-gray-400"
-                      } truncate text-xs mt-0.5 font-medium`}
+                      } truncate text-xs font-medium mt-0.5`}
                     >
                       {message.preview}
                     </p>
@@ -102,14 +102,14 @@ export default function EmailClient({
         </ul>
       </div>
 
-      <div className="flex-1 overflow-y-scroll border-l px-8 py-8">
-        <h1 className="h-8 rounded bg-gray-100 text-2xl font-bold" />
+      <div className="flex-1 overflow-y-scroll border-l border-gray-800 px-8 py-8">
+        <h1 className="h-8 rounded bg-gray-500 text-2xl font-bold" />
         <div className="mt-8 space-y-6">
           {Array.from(Array(9).keys()).map((i) => (
             <div key={i} className="space-y-2 text-sm">
-              <p className="h-4 w-5/6 rounded bg-gray-100" />
-              <p className="h-4 rounded bg-gray-100" />
-              <p className="h-4 w-4/6 rounded bg-gray-100" />
+              <p className="h-4 w-5/6 rounded bg-gray-500" />
+              <p className="h-4 rounded bg-gray-500" />
+              <p className="h-4 w-4/6 rounded bg-gray-500" />
             </div>
           ))}
         </div>
