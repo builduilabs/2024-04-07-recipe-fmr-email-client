@@ -10,6 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          200: "#ccccd1",
+          500: "#6479f2",
+        },
         gray: colors.slate,
       },
     },

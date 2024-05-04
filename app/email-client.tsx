@@ -72,7 +72,7 @@ export default function EmailClient({
                     onClick={() => toggleMessage(message)}
                     className={`${
                       selectedMessageIds.includes(message.id)
-                        ? "bg-blue-500"
+                        ? "bg-brand-500"
                         : "hover:bg-gray-700"
                     } block w-full cursor-pointer truncate rounded py-3 px-3 text-left`}
                   >
@@ -88,7 +88,7 @@ export default function EmailClient({
                     <p
                       className={`${
                         selectedMessageIds.includes(message.id)
-                          ? "text-blue-200"
+                          ? "text-brand-200"
                           : "text-gray-500"
                       } truncate text-xs mt-1`}
                     >
