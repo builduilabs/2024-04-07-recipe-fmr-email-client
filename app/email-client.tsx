@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ArchiveBoxIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import { getRandomEmail } from "@/lib/data";
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArchiveBoxIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import { getNextEmail } from '@/lib/data';
 
 export default function EmailClient({
   initialMessages,
@@ -26,7 +26,7 @@ export default function EmailClient({
   }
 
   function addMessage() {
-    setMessages((messages) => [...messages, getRandomEmail()]);
+    setMessages((messages) => [...messages, getNextEmail()]);
   }
 
   function archiveMessages() {
@@ -61,9 +61,9 @@ export default function EmailClient({
             {[...messages].reverse().map((message) => (
               <motion.li
                 initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0, overflow: "hidden" }}
-                transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0, overflow: 'hidden' }}
+                transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
                 key={message.id}
                 className="relative"
               >
@@ -72,15 +72,15 @@ export default function EmailClient({
                     onClick={() => toggleMessage(message)}
                     className={`${
                       selectedMessageIds.includes(message.id)
-                        ? "bg-brand-500"
-                        : "hover:bg-gray-700"
+                        ? 'bg-brand-500'
+                        : 'hover:bg-gray-700'
                     } block w-full cursor-pointer truncate rounded py-3 px-3 text-left`}
                   >
                     <p
                       className={`${
                         selectedMessageIds.includes(message.id)
-                          ? "text-white"
-                          : "text-gray-300"
+                          ? 'text-white'
+                          : 'text-gray-300'
                       } truncate text-sm font-semibold`}
                     >
                       {message.subject}
@@ -88,8 +88,8 @@ export default function EmailClient({
                     <p
                       className={`${
                         selectedMessageIds.includes(message.id)
-                          ? "text-brand-200"
-                          : "text-gray-500"
+                          ? 'text-brand-200'
+                          : 'text-gray-500'
                       } truncate text-xs mt-1`}
                     >
                       {message.preview}
